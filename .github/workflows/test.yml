@@ -32,4 +32,3 @@ jobs:
       - name: ❌ Tests failed
         if: failure()
         run: echo "❌ Tests failed! PR cannot be merged."
-
