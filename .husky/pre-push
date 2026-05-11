@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+echo ""
+echo "🚀 Running tests before push..."
+echo ""
+
+npm test
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ TESTS FAILED! Push blocked."
+  echo "💡 Fix the failing tests above and try again."
+  echo ""
+  exit 1
+fi
+
+echo ""
+echo "✅ All tests passed! Pushing..."
+echo ""
+
