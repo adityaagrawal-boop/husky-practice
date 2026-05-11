@@ -3,7 +3,7 @@ import { add, multiply, applyDiscount, isEven } from './math.js';
 
 describe('Math functions', () => {
   it('should add two numbers', () => {
-    expect(add(2, 3)).toBe(99);
+    expect(add(2, 3)).toBe(5);
   });
 
   it('should multiply two numbers', () => {
