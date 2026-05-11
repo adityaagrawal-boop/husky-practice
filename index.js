@@ -1,1 +1,2 @@
-var name ="Drashti";console.log(name)
+const greeting = 'Hello Didi';
+export { greeting };
