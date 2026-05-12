@@ -1,1 +1,15 @@
+echo ""
+echo "🔍 Running pre-commit checks..."
+echo ""
+
 npx lint-staged
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Pre-commit checks failed!"
+  exit 1
+fi
+
+echo ""
+echo "✅ Pre-commit passed!"
+echo ""
