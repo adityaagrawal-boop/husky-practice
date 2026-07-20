@@ -5,6 +5,7 @@
 **Last updated:** 2026-07-20
 **Atlas version:** v1 (initial pilot plumbing-test build)
 **Schema version:** 1.0
+**Last sync:** 2026-07-20 — diffed `66a739f` → `f5b3aa3`, no product-visible drift found
 
 ---
 
@@ -21,7 +22,17 @@
 - ✅ MODULES.md filled (replaces SURFACE-MAP.md's screen tree, n/a here)
 - ✅ EXCLUSIONS.md filled
 - ✅ ATLAS-RULES.md filled with scope override
+- ✅ Last sync clean (no drifted modules)
+
+## Last sync detail
+
+| Module | Drift? | Action |
+|---|---|---|
+| `math.js` | No (only a trailing `// test` comment added, zero behavior change) | None needed |
+| `index.js` | No (unchanged) | None needed |
+| Tooling (Husky/ESLint/Prettier/CI) | No (unchanged) | None needed |
+| `test-atlas-pilot.txt` | Changed (scratch file) | Skipped per ATLAS-RULES.md |
 
 ## Suggested next action
 
-None required for this repo's current size. When `math.js` or `index.js` change, `atlas sync` should update `MODULES.md` and log this to `CHANGELOG.md`.
+None required. All documented modules match current source behavior.
