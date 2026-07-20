@@ -1,12 +1,34 @@
 # Open Questions
 
-## OQ-001 — atlas sync requested but no atlas exists
+## OQ-001 - This repo is not a B2B SaaS web application
 
 - **Date:** 2026-07-20
-- **Trigger:** `atlas sync` command referencing commits `f5b3aa3…` → `32cb3cc…`
-- **Issue:** No `product-atlas/` folder, `STATUS.md`, `SURFACE-MAP.md`, or documented screens exist. `atlas sync` requires an existing atlas with screen `metadata.json` files to map changed source files to documented features. There is nothing to diff against.
-- **Additional concern:** This repo (`husky-practice`) appears to be a small utility/learning project with `math.js`, `index.js`, and tooling config — not a B2B SaaS web application. The product-atlas skill is scoped to B2B SaaS web apps with routes, screens, and UI components.
+- **Trigger:** `start atlas` (first-time automated build)
+- **Confidence:** HIGH
+- **Issue:** The product-atlas skill is scoped to B2B SaaS web applications with routes, screens, and UI components. This repo (`husky-practice`) is a small JavaScript learning/practice project containing:
+  - `index.js`: a greeting function (5 lines)
+  - `math.js`: four math utility functions (add, multiply, applyDiscount, isEven)
+  - `math.test.js`: Vitest tests for the math functions
+  - Git hooks (Husky pre-commit for lint-staged, pre-push for test gating)
+  - CI workflow (GitHub Actions running Vitest)
+  - Linting and formatting config (ESLint + Prettier)
+- **What's missing for a real atlas:**
+  - No web framework (no React, Next.js, Remix, Vue, Svelte, Rails, etc.)
+  - No routing (no routes, no pages, no screens)
+  - No UI components (no buttons, forms, tables, modals)
+  - No auth or user system
+  - No database
+  - No billing or multi-tenancy
+  - No user-facing application of any kind
 - **Action needed (human):**
-  1. If this repo *is* intended to have an atlas, run `start atlas` first to bootstrap the `product-atlas/` folder, then use `atlas sync` for future drift detection.
-  2. If this was a test of the pilot integration, the sync correctly identified there's nothing to do.
-  3. Confirm whether this repo is in-scope for product-atlas documentation.
+  1. If this was a test of the product-atlas GitHub App integration, the automated build correctly identified the repo is out of scope. The integration pipeline is working.
+  2. If you intended to document a different repo, point the product-atlas GitHub App at the correct B2B SaaS web app repository instead.
+  3. If this repo will eventually grow into a web application, re-run `start atlas` once routes and screens exist.
+- **Impact:** No screens can be documented. No SURFACE-MAP.md, FEATURE-MAP.md, or screen READMEs can be created. The atlas foundation files (OVERVIEW.md, STATUS.md, CHANGELOG.md, etc.) have been initialized with accurate information about what the repo actually contains.
+
+## OQ-002 - Prior atlas sync attempted before atlas existed
+
+- **Date:** 2026-07-20
+- **Trigger:** `start atlas` found existing `OPEN-QUESTIONS.md` from a prior `atlas sync` run
+- **Issue:** A previous automated run attempted `atlas sync` on this repo before any atlas existed. That run correctly identified the problem and logged it. This `start atlas` run has now created the foundation files, but the core scope concern (OQ-001) remains.
+- **Action needed (human):** See OQ-001. The prior sync's concern was valid.
