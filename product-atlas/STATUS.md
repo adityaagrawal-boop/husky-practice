@@ -5,6 +5,7 @@
 **Last updated:** 2026-07-20
 **Atlas version:** v1 (initial pilot plumbing-test build)
 **Schema version:** 1.0
+**Last synced commit:** 66a739f982ae7741d43838f347537bb75ea77047
 
 ---
 
@@ -21,6 +22,7 @@
 - ✅ MODULES.md filled (replaces SURFACE-MAP.md's screen tree, n/a here)
 - ✅ EXCLUSIONS.md filled
 - ✅ ATLAS-RULES.md filled with scope override
+- ✅ Last sync: no drift detected (2026-07-20)
 
 ## Suggested next action
 
