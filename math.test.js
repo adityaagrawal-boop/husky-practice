@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, multiply, applyDiscount, isEven } from './math.js';
+import { add, multiply, subtract, applyDiscount, isEven } from './math.js';
 
 describe('Math functions', () => {
   it('should add two numbers', () => {
@@ -8,6 +8,14 @@ describe('Math functions', () => {
 
   it('should multiply two numbers', () => {
     expect(multiply(4, 5)).toBe(20);
+  });
+
+  it('should subtract two numbers', () => {
+    expect(subtract(9, 4)).toBe(5);
+  });
+
+  it('should handle negative results when subtracting', () => {
+    expect(subtract(3, 8)).toBe(-5);
   });
 
   it('should apply 10% discount on 1000 to give 900', () => {
